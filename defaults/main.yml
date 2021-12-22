@@ -1,4 +1,6 @@
 ---
+node_home: /root
+
 virus_ps:
   - kdevtmpfsi
   - kinsing
