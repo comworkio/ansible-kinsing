@@ -1,0 +1,39 @@
+---
+virus_ps:
+  - kdevtmpfsi
+  - kinsing
+  - dbused
+
+virus_websites:
+  - mine.moneropool.com
+  - pool.t00ls.ru
+  - xmr.crypto-pool.fr
+
+virus_cron_expr:
+  - xmr.ipzse.com
+  - 185.181.10.234
+  - 146.71.79.230
+  - 122.51.164.83
+
+virus_files:
+  - /bin/bprofr
+  - /bin/sysdr
+  - /bin/crondr
+  - /bin/initdr
+  - /usr/bin/bprofr
+  - /usr/bin/sysdr 
+  - /usr/bin/crondr
+  - /usr/bin/initdr
+  - /tmp/dbused
+  - /tmp/dbusex
+  - /tmp/xms
+  - /tmp/x86_64
+  - /tmp/i686
+  - /tmp/go
+  - /tmp/x64b
+  - /tmp/x32b
+  - /tmp/2start.jpg
+  - /var/tmp/2.sh
+  - /var/tmp/config.json
+  - /var/tmp/xmrig
+  - /var/tmp/1.so

@@ -1,0 +1,15 @@
+---
+- name: Creation of cleaning script
+  become: yes
+  template:
+    src: "{{ item.file }}.j2"
+    dest: "{{ item.path }}/{{ item.file }}"
+    mode: '0755'
+    owner: root
+    group: root
+  with_items:
+    - { path: "{{ node_home }}", file: "clean_kinsing.sh"}
+
+- name: Perform cleaning
+  become: yes
+  command: "bash {{ node_home }}/clean_kinsing.sh & disown"

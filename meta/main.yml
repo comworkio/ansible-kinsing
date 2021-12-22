@@ -1,0 +1,10 @@
+galaxy_info:
+  role_name: kinsing
+  author: Idriss Neumann
+  description: Clean kinsing malware and suspect binaries
+  company: Comwork
+
+  min_ansible_version: 2.2
+
+  platforms:
+    - name: CentOS

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+LOG_FILE="{{ node_home }}/virus.log"
+
+echo "Begin: $(date)" > "${LOG_FILE}" 2>&1
+
+{% for item in virus_ps %}
+echo "Killing {{ item }}" >> "${LOG_FILE}" 2>&1
+ps -ef|grep "{{ item }}" >> "${LOG_FILE}" 2>&1
+pgrep {{ item }} && kill $(pgrep {{ item }}) >> "${LOG_FILE}" 2>&1
+find / -iname {{ item }}* -exec rm -fv {} \;  >> "${LOG_FILE}" 2>&1
+rm -rf /tmp/{{ item }}*  >> "${LOG_FILE}" 2>&1
+ps -ef | awk '($0 ~ "{{ item }}"){system ("kill -9 "$2)}' >> "${LOG_FILE}" 2>&1
+{% endfor %}
+
+{% for item in virus_websites %}
+echo "Killing {{ item }} websites"  >> "${LOG_FILE}" 2>&1
+ps -ef | awk '($0 ~ "{{ item }}"){system ("kill -9 "$2)}' >> "${LOG_FILE}" 2>&1
+{% endfor %}
+
+{% for item in virus_cron_expr %}
+echo "Removing {{ item }} from cron"  >> "${LOG_FILE}" 2>&1
+crontab -l | sed '/{{ item }}/d' | crontab -
+{% endfor %}
+
+{% for item in virus_files %}
+echo "Removing {{ item }} : $(ls -la {{ item }})"  >> "${LOG_FILE}" 2>&1
+rm -rf {{ item }} >> "${LOG_FILE}" 2>&1
+{% endfor %}
+
+echo "End: $(date)" >> "${LOG_FILE}" 2>&1
