@@ -20,3 +20,4 @@ You should also destroy and recreate all your OCI containers.
 * Main repo: https://gitlab.comwork.io/oss/ansible-kinsing
 * Github mirror: https://github.com/idrissneumann/ansible-kinsing.git
 * Gitlab mirror: https://gitlab.com/ineumann/ansible-kinsing.git
+* Bitbucket mirror: https://bitbucket.org/idrissneumann/elastic-indices-lifecycle.git
