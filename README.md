@@ -21,3 +21,4 @@ You should also destroy and recreate all your OCI containers.
 * Github mirror: https://github.com/idrissneumann/ansible-kinsing.git
 * Gitlab mirror: https://gitlab.com/ineumann/ansible-kinsing.git
 * Bitbucket mirror: https://bitbucket.org/idrissneumann/ansible-kinsing.git
+* Froggit mirror: https://lab.frogg.it/ineumann/ansible-kinsing.git
